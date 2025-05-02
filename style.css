@@ -1,5 +1,6 @@
+/* Base Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background: #f4f4f4;
@@ -9,54 +10,258 @@ body {
 header {
     background: #333;
     color: #fff;
-    padding: 20px;
+    padding: 30px 20px;
     text-align: center;
 }
 
-section {
-    padding: 20px;
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    background: #fff;
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-}
-
-a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-  }
-
-footer {
-    background: #222;
-    color: #aaa;
-    text-align: center;
-    padding: 10px;
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #facc15;
+    animation: fadeIn 2s ease forwards;
+    opacity: 0;
 }
 
 .greeting {
-    font-size: 1.2em;
-    color: #facc15; /* warm yellow */
+    font-size: 1.1em;
+    color: #facc15;
     margin-top: 10px;
     animation: fadeIn 2s ease forwards;
     opacity: 0;
-  }
-  
-  @keyframes fadeIn {
+}
+
+@keyframes fadeIn {
     to {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-  
+}
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+/* Cards */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    opacity: 0; /* Start invisible */
+    animation: fadeInUp 1s ease-out forwards; /* Apply animation */
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25),
+        0 0 8px #facc15;
+    border: 1px solid #facc15;
+}
+
+.card a {
+    display: inline-block;
+    margin-right: 15px;
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Form Styles */
+#contact {
+    background-color: #f8f8f8;
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact h2 {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+}
+
+form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+form button {
+    background-color: #facc15;
+    color: #333;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #fbbf24;
+}
+
+/* Profile Section */
+#profile {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#profile img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: fadeInUp 1s ease-out forwards; /* Apply animation */
+    opacity: 0; /* Start invisible */
+    animation-delay: 0.3s;
+}
+
+/* Dark Mode Toggle Button */
+#toggle-theme {
+    margin-top: 15px;
+    padding: 8px 16px;
+    border: none;
+    background-color: #facc15;
+    color: #333;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+#toggle-theme:hover {
+    background-color: #fbbf24;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    background: #121212;
+    color: #facc15;
+}
+
+body.dark-mode .card {
+    background: #2c2c2c;
+    color: #e0e0e0;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode a {
+    color: #90cdf4;
+}
+
+body.dark-mode footer {
+    background: #111;
+    color: #888;
+}
+
+body.dark-mode #toggle-theme {
+    background-color: #333;
+    color: #facc15;
+}
+
+/* Add Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header h1, header p, .greeting, #projects, .card, footer {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+header h1 {
+    animation-delay: 0.3s;
+}
+
+header p {
+    animation-delay: 0.6s;
+}
+
+.greeting {
+    animation-delay: 0.9s;
+}
+
+#projects {
+    animation-delay: 1.2s;
+}
+
+.card {
+    animation-delay: 1.5s;
+}
+
+footer {
+    animation-delay: 1.8s;
+}
