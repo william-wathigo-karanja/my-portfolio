@@ -45,3 +45,18 @@ footer {
     text-align: center;
     padding: 10px;
 }
+
+.greeting {
+    font-size: 1.2em;
+    color: #facc15; /* warm yellow */
+    margin-top: 10px;
+    animation: fadeIn 2s ease forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
